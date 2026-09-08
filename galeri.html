@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri | EmotiPops</title>
+<meta name="description" content="Galeri konten seru FOX'S Gummy Candy EmotiPops langsung dari Instagram @foxsfuntime.id.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages/galeri.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="flagWave" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" numOctaves="2" seed="7" result="noise">
+            <animate attributeName="baseFrequency" dur="7s" values="0.006 0.05;0.01 0.07;0.006 0.05" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+</svg>
+<div id="bubbles-container"></div>
+
+<header class="header">
+    <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <img src="assets/picture/Logo_FOX_S_GummyCandy.png" alt="FOX'S Gummy Candy" class="header-logo-img">
+    </div>
+    <nav class="nav glass">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="flavours.html" class="nav-item">Flavours</a>
+        <a href="ingredients.html" class="nav-item">Ingredients</a>
+        <a href="find-us.html" class="nav-item">Find Us</a>
+        <a href="galeri.html" class="nav-item active">Galeri</a>
+    </nav>
+    <button class="contact-btn">Contact Us</button>
+</header>
+
+<section class="page-hero">
+    <h1 class="page-title"><span class="outline">The</span> Galeri</h1>
+    <p class="page-subtitle">
+        Konten seru langsung dari akun resmi kami di Instagram. Ketawa, ikutan tren,
+        dan lihat #1000CaraSeruEmotiPops bareng komunitas EmotiPops.
+    </p>
+</section>
+
+<div class="galeri-header">
+    <p class="chip-section-title" style="margin-bottom:0;">@FOXSFUNTIME.ID</p>
+    <a href="https://www.instagram.com/foxsfuntime.id/" target="_blank" rel="noopener" class="follow-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#2b0512" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="#2b0512" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#2b0512"/></svg>
+        Follow @foxsfuntime.id
+    </a>
+</div>
+
+<section class="galeri-section">
+    <div class="galeri-swiper swiper">
+        <div class="swiper-wrapper" id="galeri-grid"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <p class="galeri-note">
+        Preview di atas memakai foto contoh bergaya kartu, bukan screenshot. Klik tile mana pun untuk
+        melihat caption lengkapnya. Ganti isi array <code>POSTS</code> di bagian bawah halaman ini
+        dengan foto asli hasil export dari akun @foxsfuntime.id (dan caption aslinya) untuk menjadikan galeri ini 100% nyata.
+    </p>
+</section>
+
+<div class="ig-modal" id="igModal">
+    <div class="ig-modal-inner">
+        <button class="ig-modal-close" id="igModalClose" aria-label="Close">&times;</button>
+        <button class="ig-nav prev" id="igNavPrev" aria-label="Previous">&#8249;</button>
+        <div class="ig-modal-image" id="igModalImage"></div>
+        <div class="ig-modal-panel">
+            <div class="ig-modal-header">
+                <img class="ig-avatar" src="assets/picture/Logo_FOX_S_GummyCandy.png" alt="FOX'S Gummy Candy" onerror="this.style.background='#fbcfe8'; this.src='';">
+                <div>
+                    <p class="ig-handle">foxsfuntime.id</p>
+                    <p class="ig-username">@foxsfuntime.id</p>
+                </div>
+            </div>
+            <p class="ig-time" id="igModalTime"></p>
+            <p class="ig-caption" id="igModalCaption"></p>
+            <a class="ig-original-link" id="igModalLink" href="#" target="_blank" rel="noopener">Go to original post</a>
+            <div class="ig-modal-footer">
+                <span><span id="igModalLikes"></span> LIKES &nbsp;•&nbsp; <span id="igModalComments"></span> COMMENTS</span>
+                <span>&#8599;</span>
+            </div>
+        </div>
+        <button class="ig-nav next" id="igNavNext" aria-label="Next">&#8250;</button>
+    </div>
+</div>
+
+
+<footer>
+    &copy; 2026 FOX'S Gummy Candy — EmotiPops. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Back to Home</a>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/galeri.js"></script>
+</body>
+</html>

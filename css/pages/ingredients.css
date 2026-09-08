@@ -1,0 +1,202 @@
+/* INGREDIENTS.CSS — page-specific styles (base.css handles shared header/nav/footer/bubbles) */
+
+:root {
+    --bg-inner: #1a0a2e;
+    --bg-mid: #0d0518;
+    --bg-outer: #050208;
+}
+
+.ingredient-stack {
+    max-width: 1000px;
+    margin: 3rem auto 4rem;
+    padding: 0 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.ingredient-card {
+    position: relative;
+    border-radius: 32px;
+    padding: 2.5rem;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ingredient-card.love-angry {
+    background: radial-gradient(circle at 15% 0%, rgba(226, 35, 26, 0.3) 0%, rgba(76, 138, 43, 0.1) 55%, rgba(0,0,0,0) 100%);
+}
+
+.ingredient-card.happy-sad {
+    background: radial-gradient(circle at 15% 0%, rgba(11, 79, 138, 0.35) 0%, rgba(242, 183, 5, 0.12) 55%, rgba(0,0,0,0) 100%);
+}
+
+.ingredient-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.ingredient-head-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ingredient-logo-img {
+    width: 84px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.ingredient-name {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.ingredient-tagline {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.lang-toggle {
+    display: flex;
+    gap: 0.3rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.3rem;
+    border-radius: 100px;
+    flex-shrink: 0;
+}
+
+.lang-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted-color);
+    background: transparent;
+    border: none;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.lang-btn.active {
+    background: #fbcfe8;
+    color: #011d17;
+}
+
+.comp-block { display: none; }
+
+.comp-block.active { display: block; }
+
+.comp-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--muted-color);
+    margin-bottom: 0.6rem;
+}
+
+.comp-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    max-width: 780px;
+}
+
+.extract-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.extract-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.extract-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.color-key {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted-color);
+}
+
+.color-key span.ck-title {
+    width: 100%;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+}
+
+.note-strip {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    padding: 0 4%;
+    position: relative;
+    z-index: 10;
+}
+
+.note-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 1.75rem 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.note-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.note-box p {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+    .ingredient-card { padding: 1.75rem; }
+    .ingredient-head { flex-direction: column; align-items: flex-start; }
+}

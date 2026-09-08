@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavours | EmotiPops</title>
+<meta name="description" content="Explore EmotiPops flavours — Love & Angry (Lychee, Wildberry & Orange) and Happy & Sad (Blackcurrant, Strawberry, Lemon & Mango).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages/flavours.css">
+</head>
+<body>
+
+<div id="bubbles-container"></div>
+
+<div class="fruit-bg" id="fruit-bg"></div>
+
+<header class="header">
+    <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <img src="assets/picture/Logo_FOX_S_GummyCandy.png" alt="FOX'S Gummy Candy" class="header-logo-img">
+    </div>
+    <nav class="nav glass">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="flavours.html" class="nav-item active">Flavours</a>
+        <a href="ingredients.html" class="nav-item">Ingredients</a>
+        <a href="find-us.html" class="nav-item">Find Us</a>
+        <a href="galeri.html" class="nav-item">Galeri</a>
+    </nav>
+    <button class="contact-btn">Contact Us</button>
+</header>
+
+<section class="page-hero">
+    <h1 class="page-title"><span class="outline">Our</span> Flavours</h1>
+    <p class="page-subtitle">
+        Two moods, two fruity gummy mixes. Each pack made with real fruit extract and Vitamin C.
+        Pick your mood, pick your pack.
+    </p>
+</section>
+
+<main class="flavour-swiper swiper">
+<div class="swiper-wrapper">
+
+    <article class="swiper-slide flavour-card love-angry">
+        <div class="flavour-badge">
+            <span>❤</span> Fruit Extract + Vitamin C
+        </div>
+        <img src="assets/picture/Gummy2_picture.png" alt="EmotiPops Love & Angry Pack" class="flavour-pack-img">
+        <img src="assets/picture/Emotipops_LoveAngry.png" alt="EmotiPops Love & Angry" class="flavour-logo-img">
+        <h2 class="flavour-name">Love & Angry</h2>
+        <p class="flavour-desc">
+            Sweet, tangy and a little bit fiery — this mix swings from heart-eyed love to
+            angry-face zing in every handful.
+        </p>
+        <div class="fruit-tags">
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#a3e635;"></span>Lychee</span>
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#7c3aed;"></span>Wildberry</span>
+            <span class="row-break"></span>
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#fb923c;"></span>Orange</span>
+        </div>
+        <div class="mood-strip">
+            <span class="mood-pill">😍 Love</span>
+            <span class="mood-pill">😠 Angry</span>
+        </div>
+        <button class="flavour-cta">
+            Shop Love & Angry
+            <span class="plus-icon">+</span>
+        </button>
+    </article>
+
+    <article class="swiper-slide flavour-card happy-sad">
+        <div class="flavour-badge">
+            <span>☺</span> Fruit Extract + Vitamin C
+        </div>
+        <img src="assets/picture/Gummy1_picture.png" alt="EmotiPops Happy & Sad Pack" class="flavour-pack-img">
+        <img src="assets/picture/Emotipops_HappySad.png" alt="EmotiPops Happy & Sad" class="flavour-logo-img">
+        <h2 class="flavour-name">Happy & Sad</h2>
+        <p class="flavour-desc">
+            Bright and juicy with a soft tart edge — a feel-good fruit mix that goes from
+            big smiles to happy tears.
+        </p>
+        <div class="fruit-tags">
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#4338ca;"></span>Blackcurrant</span>
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#f43f5e;"></span>Strawberry</span>
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#facc15;"></span>Lemon</span>
+            <span class="fruit-tag"><span class="fruit-dot" style="background:#fb923c;"></span>Mango</span>
+        </div>
+        <div class="mood-strip">
+            <span class="mood-pill">😊 Happy</span>
+            <span class="mood-pill">😢 Sad</span>
+        </div>
+        <button class="flavour-cta">
+            Shop Happy & Sad
+            <span class="plus-icon">+</span>
+        </button>
+    </article>
+
+</div>
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</main>
+
+<footer>
+    &copy; 2026 FOX'S Gummy Candy — EmotiPops. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Back to Home</a>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/flavours.js"></script>
+</body>
+</html>

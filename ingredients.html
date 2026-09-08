@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingredients | EmotiPops</title>
+<meta name="description" content="EmotiPops ingredients — full composition for Love & Angry (Lychee, Wildberry & Orange) and Happy & Sad (Blackcurrant, Strawberry, Lemon & Mango) gummy candy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages/ingredients.css">
+</head>
+<body>
+
+<div id="bubbles-container"></div>
+
+<div class="fruit-bg" id="fruit-bg"></div>
+
+<header class="header">
+    <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <img src="assets/picture/Logo_FOX_S_GummyCandy.png" alt="FOX'S Gummy Candy" class="header-logo-img">
+    </div>
+    <nav class="nav glass">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="flavours.html" class="nav-item">Flavours</a>
+        <a href="ingredients.html" class="nav-item active">Ingredients</a>
+        <a href="find-us.html" class="nav-item">Find Us</a>
+        <a href="galeri.html" class="nav-item">Galeri</a>
+    </nav>
+    <button class="contact-btn">Contact Us</button>
+</header>
+
+<section class="page-hero">
+    <h1 class="page-title"><span class="outline">Our</span> Ingredients</h1>
+    <p class="page-subtitle">
+        Full composition for every EmotiPops pack.
+        Real fruit extract and Vitamin C.
+    </p>
+</section>
+
+<main class="ingredient-stack">
+
+    <article class="ingredient-card love-angry">
+        <div class="ingredient-head">
+            <div class="ingredient-head-left">
+                <img src="assets/picture/Emotipops_LoveAngry.png" alt="EmotiPops Love & Angry" class="ingredient-logo-img">
+                <div>
+                    <h2 class="ingredient-name">Love & Angry</h2>
+                    <p class="ingredient-tagline">Lychee &middot; Wildberry &middot; Orange</p>
+                </div>
+            </div>
+            <div class="lang-toggle" data-group="la">
+                <button class="lang-btn active" data-lang="id">ID</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+
+        <div class="comp-block active" data-group="la" data-lang="id">
+            <p class="comp-label">KOMPOSISI</p>
+            <p class="comp-text">
+                Sirup Glukosa, Gula, Pembentuk Gel, Humektan, Pengatur Keasaman, Perisa Sintetik,
+                Pelapis (mengandung Antioksidan Tokoferol), Vitamin C, Ekstrak Buah Leci (0.005%),
+                Ekstrak Buah Stroberi (0.005%), Ekstrak Buah Jeruk (0.005%), Pewarna Sintetik
+                (Merah Allura CI. No. 16035, Tartrazin CI. No. 19140, Biru Berlian FCF CI. No. 42090).
+            </p>
+        </div>
+        <div class="comp-block" data-group="la" data-lang="en">
+            <p class="comp-label">INGREDIENTS</p>
+            <p class="comp-text">
+                Glucose Syrup, Sugar, Gelling Agent, Humectant, Acidity Regulator, Synthetic Flavors,
+                Glazing Agent (contains Antioxidant Tocopherol), Vitamin C, Lychee Extract (0.005%),
+                Strawberry Extract (0.005%), Orange Extract (0.005%), Synthetic Colorant
+                (Allura Red CI. No. 16035, Tartrazine CI. No. 19140, Brilliant Blue FCF CI. No. 42090).
+            </p>
+        </div>
+
+        <div class="extract-row">
+            <span class="extract-tag"><span class="extract-dot" style="background:#a3e635;"></span>Lychee 0.005%</span>
+            <span class="extract-tag"><span class="extract-dot" style="background:#f43f5e;"></span>Strawberry 0.005%</span>
+            <span class="extract-tag"><span class="extract-dot" style="background:#fb923c;"></span>Orange 0.005%</span>
+        </div>
+
+        <div class="color-key">
+            <span class="ck-title">Synthetic Colorants</span>
+            <span>Allura Red &mdash; CI 16035</span>
+            <span>Tartrazine &mdash; CI 19140</span>
+            <span>Brilliant Blue FCF &mdash; CI 42090</span>
+        </div>
+    </article>
+
+    <article class="ingredient-card happy-sad">
+        <div class="ingredient-head">
+            <div class="ingredient-head-left">
+                <img src="assets/picture/Emotipops_HappySad.png" alt="EmotiPops Happy & Sad" class="ingredient-logo-img">
+                <div>
+                    <h2 class="ingredient-name">Happy & Sad</h2>
+                    <p class="ingredient-tagline">Blackcurrant &middot; Strawberry &middot; Lemon &middot; Mango</p>
+                </div>
+            </div>
+            <div class="lang-toggle" data-group="hs">
+                <button class="lang-btn active" data-lang="id">ID</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+
+        <div class="comp-block active" data-group="hs" data-lang="id">
+            <p class="comp-label">KOMPOSISI</p>
+            <p class="comp-text">
+                Sirup Glukosa, Gula, Pembentuk Gel, Humektan, Pengatur Keasaman, Perisa Sintetik
+                (mengandung Pemanis Alami Maltitol), Pelapis (mengandung Antioksidan Tokoferol),
+                Vitamin C, Ekstrak Buah Blackcurrant (0.005%), Ekstrak Buah Stroberi (0.005%),
+                Ekstrak Buah Lemon (0.005%), Ekstrak Buah Mangga (0.005%), Pewarna Sintetik
+                (Biru Berlian FCF CI. No. 42090, Tartrazin CI. No. 19140).
+            </p>
+        </div>
+        <div class="comp-block" data-group="hs" data-lang="en">
+            <p class="comp-label">INGREDIENTS</p>
+            <p class="comp-text">
+                Glucose Syrup, Sugar, Gelling Agent, Humectant, Acidity Regulator, Synthetic Flavor
+                (contains Maltitol), Coating Agent (contains Antioxidant Tocopherol), Vitamin C,
+                Blackcurrant Extract (0.005%), Strawberry Extract (0.005%), Lemon Extract (0.005%),
+                Mango Extract (0.005%), Synthetic Colorant (Brilliant Blue FCF CI. No. 42090,
+                Tartrazine CI. No. 19140).
+            </p>
+        </div>
+
+        <div class="extract-row">
+            <span class="extract-tag"><span class="extract-dot" style="background:#4338ca;"></span>Blackcurrant 0.005%</span>
+            <span class="extract-tag"><span class="extract-dot" style="background:#f43f5e;"></span>Strawberry 0.005%</span>
+            <span class="extract-tag"><span class="extract-dot" style="background:#facc15;"></span>Lemon 0.005%</span>
+            <span class="extract-tag"><span class="extract-dot" style="background:#fb923c;"></span>Mango 0.005%</span>
+        </div>
+
+        <div class="color-key">
+            <span class="ck-title">Synthetic Colorants</span>
+            <span>Brilliant Blue FCF &mdash; CI 42090</span>
+            <span>Tartrazine &mdash; CI 19140</span>
+        </div>
+    </article>
+
+</main>
+
+<section class="note-strip">
+    <div class="note-box">
+        <span class="note-icon">&#9432;</span>
+        <p>
+            Happy & Sad contains Maltitol, a natural sweetener &mdash; consume in moderation.
+            Percentages shown reflect real fruit extract content. Always check the pack label
+            for the most current composition before consuming.
+        </p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 FOX'S Gummy Candy — EmotiPops. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Back to Home</a>
+</footer>
+
+
+<script src="js/common.js"></script>
+<script src="js/pages/ingredients.js"></script>
+</body>
+</html>
