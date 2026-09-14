@@ -74,6 +74,12 @@ body {
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+}
+
+.fruit-bg.is-visible {
+    opacity: 1;
 }
 
 .float-fruit {
@@ -88,12 +94,24 @@ body {
 
 /* ---------- Header ---------- */
 .header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 2rem 4%;
-    position: relative;
-    z-index: 100;
+    padding: 1.25rem 4%;
+    position: sticky;
+    top: 0;
+    /* Deliberately much higher than any in-page content (highest found
+       elsewhere is 110, e.g. hero CTA / berries layers). Content that
+       also uses z-index:100 was tying with the header and, on equal
+       z-index, winning by DOM order — this guarantees the header always
+       wins. Stays below the galeri lightbox modal (z-index:1000), which
+       should legitimately cover the header when open. */
+    z-index: 500;
+    isolation: isolate;
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
@@ -103,10 +121,18 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
     font-family: var(--font-heading);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
 }
 
 .header-logo-img {
-    height: 44px;
+    height: 64px;
     width: auto;
     display: block;
 }
@@ -118,6 +144,8 @@ body {
     padding: 0.4rem;
     border-radius: 100px;
     border: 1px solid var(--glass-border);
+    grid-column: 2;
+    justify-self: center;
 }
 
 .nav.glass {
@@ -199,9 +227,29 @@ footer {
 }
 footer a { color: var(--text-color); text-decoration: none; }
 
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.footer-logo {
+    height: 36px;
+    width: auto;
+    display: block;
+    opacity: 0.92;
+}
+
+.footer-copyright {
+    margin: 0;
+    color: var(--muted-color);
+    font-size: 0.8rem;
+}
+
 /* ---------- Shared responsive header behaviour ---------- */
 @media (max-width: 860px) {
-    .header { flex-direction: column; gap: 1rem; padding: 1.5rem 6%; }
+    .header { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 6%; }
     .nav { flex-wrap: wrap; justify-content: center; }
 }
 

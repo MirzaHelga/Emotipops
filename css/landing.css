@@ -1,0 +1,199 @@
+/* =========================================================
+   LANDING.CSS — turns the multi-page site into a single
+   scrolling landing page. Only touches spacing/anchoring;
+   all page-specific visuals stay in css/pages/*.css.
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* index.css was written for a standalone, non-scrolling hero
+   page (overflow:hidden + fixed header). Now that Home is just
+   the first section of a long scrolling page, undo both so the
+   whole document can scroll normally and the header behaves
+   like it does on every other section. */
+body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+.header {
+    position: sticky !important;
+    top: 0;
+    width: auto !important;
+}
+
+/* Home no longer needs the extra top padding that used to
+   compensate for the fixed header */
+#product .hero {
+    padding-top: 0;
+}
+
+.landing-section {
+    scroll-margin-top: 104px;
+    position: relative;
+}
+
+/* Divider between stacked sections so each still reads as
+   its own "page" while scrolling */
+.landing-section + .landing-section {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1px; /* avoids margin-collapse hairline gaps */
+}
+
+/* The hero section (#home) already fills the viewport on its
+   own, so give the sections right after it a little breathing
+   room before their page-hero kicks in */
+#flavours .page-hero,
+#ingredients .page-hero,
+#find-us .page-hero,
+#meet-us .page-hero {
+    padding-top: 4.5rem;
+}
+
+#galeri .galeri-header {
+    padding-top: 4.5rem;
+}
+
+/* Only one footer now — no per-section footer to hide */
+
+/* ---------- Custom scrollbar (matches EmotiPops dark/pink theme) ---------- */
+html {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--accent-2) rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-2);
+    background-clip: padding-box;
+}
+
+/* =========================================================
+   VIDEO HERO — new #home section (ad video with sound,
+   plus a mute/unmute toggle). The old hero content now
+   lives in #product.
+   ========================================================= */
+.video-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    /* Raise this section above the fixed, page-wide #fruit-bg layer
+       (z-index: 1) so the floating 3D fruits never paint over the
+       video while #home is in view. This is a CSS-level backstop;
+       js/pages/home.js also fully hides #fruit-bg while the video
+       is on screen, so the fruits can never appear on top of it. */
+    z-index: 5;
+    isolation: isolate;
+}
+
+.video-hero-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* ---------- Sound toggle — sliding pill / segmented control ---------- */
+.video-mute-toggle {
+    position: absolute;
+    z-index: 2;
+    top: 1.5rem;
+    right: 4%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 84px;
+    height: 40px;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.video-mute-toggle:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-2px);
+}
+
+.video-mute-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* the little white "thumb" that slides behind the active icon */
+.toggle-pill {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.video-mute-toggle.is-unmuted .toggle-pill {
+    transform: translateX(38px);
+}
+
+.toggle-icon {
+    position: relative;
+    z-index: 1;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.65);
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+/* default state = muted, so the muted icon sits on the white thumb */
+.video-mute-toggle .icon-muted {
+    color: #18181b;
+}
+
+.video-mute-toggle.is-unmuted .icon-muted {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.video-mute-toggle.is-unmuted .icon-unmuted {
+    color: #18181b;
+}

@@ -1,9 +1,9 @@
 /* FIND-US.JS — page-specific behaviour (common.js handles bubbles + floating fruit bg) */
 
 // Entrance animation
-gsap.from('.page-title', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' });
-gsap.from('.page-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.15, ease: 'power2.out' });
-gsap.from('.map-card, .info-panel', { opacity: 0, y: 40, duration: 0.8, delay: 0.25, stagger: 0.15, ease: 'power2.out' });
+safeReveal('.page-title', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' });
+safeReveal('.page-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.15, ease: 'power2.out' });
+safeReveal('.map-card, .info-panel', { opacity: 0, y: 40, duration: 0.8, delay: 0.25, stagger: 0.15, ease: 'power2.out' });
 
 // ---- Distribution data ----
 // Keyed by ISO 3166-1 numeric id (matches world-atlas topojson feature ids)

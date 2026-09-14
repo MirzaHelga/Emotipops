@@ -184,6 +184,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Entrance animation
-gsap.from('.page-title', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' });
-gsap.from('.page-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.15, ease: 'power2.out' });
-gsap.from('.galeri-tile', { opacity: 0, y: 40, duration: 0.6, delay: 0.2, stagger: 0.06, ease: 'power2.out' });
+safeReveal('.page-title', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' });
+safeReveal('.page-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.15, ease: 'power2.out' });
+safeReveal('.galeri-tile', { opacity: 0, y: 40, duration: 0.6, delay: 0.2, stagger: 0.06, ease: 'power2.out' });

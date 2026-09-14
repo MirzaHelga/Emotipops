@@ -89,4 +89,50 @@
         requestAnimationFrame(animateFruitBg);
     }
     animateFruitBg();
+
+    // Fade the fruit layer in for every section EXCEPT #home and #product
+    // (video + the main 3D hero shot need a clean, uncluttered backdrop) —
+    // hidden (opacity 0, see base.css) while either is on screen, visible
+    // everywhere else (Flavours, Ingredients, Find Us, Meet Us, Galeri).
+    // CSS transition handles the smooth fade.
+    const hiddenSections = ['home', 'product']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    if (hiddenSections.length) {
+        const intersecting = new Set();
+        const visibilityObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) intersecting.add(entry.target.id);
+                else intersecting.delete(entry.target.id);
+            });
+            fruitBg.classList.toggle('is-visible', intersecting.size === 0);
+        }, { threshold: 0.2 });
+        hiddenSections.forEach(sec => visibilityObserver.observe(sec));
+    }
 })();
+
+// ---------- Safe entrance reveal (fallback kalau GSAP gagal/nyangkut) ----------
+window.safeReveal = function (selector, vars) {
+    const els = document.querySelectorAll(selector);
+    if (!els.length) return;
+
+    if (typeof gsap === 'undefined') {
+        // GSAP gagal load sama sekali -> langsung tampilkan
+        els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+        return;
+    }
+
+    gsap.from(els, { ...vars, clearProps: 'opacity,transform' });
+
+    // Safety net: paksa tampil kalau animasi entah kenapa nggak pernah selesai
+    const wait = ((vars.delay || 0) + vars.duration) * 1000 + 1000;
+    setTimeout(() => {
+        els.forEach(el => {
+            if (getComputedStyle(el).opacity === '0') {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            }
+        });
+    }, wait);
+};

@@ -49,6 +49,8 @@ body.blue-theme {
     padding: 0;
     height: 100%;
     position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .main-title,
@@ -394,6 +396,11 @@ body.blue-theme {
 @keyframes shine {
     from { transform: translateX(-100%) rotate(45deg); }
     to { transform: translateX(200%) rotate(45deg); }
+}
+
+@media (max-width: 1600px) {
+    .main-title, .side-title { font-size: clamp(3.2rem, 6vw, 7rem); }
+    .hero-right { width: 380px; }
 }
 
 @media (max-width: 1200px) {
